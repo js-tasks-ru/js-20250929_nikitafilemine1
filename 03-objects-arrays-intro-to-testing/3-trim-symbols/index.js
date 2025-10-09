@@ -13,7 +13,7 @@ export function trimSymbols(string, size) {
   let lastChar = "";
   let count = 0;
 
-  string.split("").forEach((char) => {
+  for (const char of string) {
     if (char === lastChar) {
       count++;
     } else {
@@ -24,7 +24,7 @@ export function trimSymbols(string, size) {
     if (count <= size) {
       result += char;
     }
-  });
+  }
 
   return result;
 }
