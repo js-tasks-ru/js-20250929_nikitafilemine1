@@ -57,6 +57,7 @@ export default class ColumnChart {
 
   update(newData) {
     this.data = newData;
+    this.element.replaceWith(this._createElement());
   }
 
   remove() {
