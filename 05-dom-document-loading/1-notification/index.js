@@ -34,16 +34,16 @@ export default class NotificationMessage {
     const body = document.querySelector("body");
     (container ? container : body).appendChild(this.element);
     this.timerId = setTimeout(() => {
-      this.remove();
+      this.destroy();
     }, this.duration);
   }
 
   remove() {
-    this.destroy();
+    this.element.remove();
   }
 
   destroy() {
-    this.element.remove();
+    this.remove();
     clearTimeout(this.timerId);
   }
 }
